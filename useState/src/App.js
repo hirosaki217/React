@@ -1,14 +1,13 @@
 import { useState } from "react";
+import Content from "./Content";
 
 function App() {
-  const [counter, setCounter] = useState(1)
-  const handleIncrease = () => {
-    setCounter(counter + 1)
-  }
+  const [show, setShow]  =  useState(false)
+
   return (
     <div className="App">
-      <h1>{counter}</h1>
-      <button onClick={handleIncrease}>increase</button>
+      <button onClick={()=> setShow(!show)}>Toggle</button>
+      {show && <Content />}
     </div>
   );
 }
